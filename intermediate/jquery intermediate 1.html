@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jquery practice site</title>
+		<script src="jquery-2.0.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script type="text/javascript"> 
+
+
+		$(document).ready(function(){
+
+		$('img').click(function(){
+			$(this).hide();
+		});
+
+		$('.restore').click(function(){
+			$('img').show();
+
+		});
+    	$( ".date" ).datepicker();
+		$('#datepicker').submit(function(){
+			var start = $('#start').val();
+			var end = $('#end').val();
+			$('#displaydate').html("Start Date:" + start + "<br>" + "End Date" + end);
+			return false;
+
+		});
+
+		});
+
+		</script>
+
+		<style type="text/css">
+		img{
+			height:200px;
+			width:180px;
+		}
+		</style>
+
+	<body>
+	<img src="jits.jpg">
+	<img src="jits.jpg">
+	<img src="jits.jpg">
+	<img src="jits.jpg">
+	<img src="jits.jpg">
+	<img src="jits.jpg">
+	<img src="jits.jpg">
+	<img src="jits.jpg">
+
+	<button class="restore">Restore</button>
+	
+	<div id="displaydate">
+	</div>
+	<div>
+	<form id="datepicker" action="#" method="post">
+		<label>Start Date:<Input type="text" id="start" class="date"></label>
+		<label>End Date:<Input type="text" id="end" class="date"></label>
+		<input type="submit" value="submit">
+	</form>
+	</div>
+
+	</body>
+</html>

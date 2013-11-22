@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jquery practice site</title>
+		<script src="jquery-2.0.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js">
+		</script>
+		<script type="text/javascript"> 
+
+
+		$(document).ready(function(){
+		// $(".hide").hide();
+		
+		$('.switch').hover(
+			function(){
+			$(':first-child', this).fadeOut();
+		},	
+			function(){
+			$(':first-child', this).fadeIn();
+		});
+
+
+
+
+		$('#add').click(function(){
+		var first = $('#ifirst').val();
+		var last = $('#ilast').val();
+		var email = $('#iemail').val();
+		var contact = $('#icontact').val();
+			$('#new').append('<tr><td>'+first+'</td> <td>'+last+'</td> <td>'+email+'</td><td>'+contact+'</td></tr>');
+			// $('#last').append(last);
+			// $('#email').append(email);
+			// $('#contact').append(contact);
+			return false;
+
+		});
+		});
+
+
+		</script>
+
+		<style type="text/css">
+		img{
+			/*display:inline-block;*/
+			height:250px;
+			width:200px;
+			margin:20px;
+		}
+		.switch{
+			display:inline-block;
+			height:270px;
+			width:220px;
+		}
+		.flip{
+			z-index:-100;
+			position:absolute;
+		}
+		.front{
+			z-index:1000;
+			position:absolute;
+		}
+	
+		}
+		</style>
+	<body>
+		<div class="switch">
+			<img class="front" src="bowser.jpg">
+			<img class="flip" src="bowser2.jpg">
+		</div>
+		<div class="switch">
+			<img class="front" src="Bugatti.jpg">
+			<img class="flip" src="Bugatti2.jpg">
+		</div>
+		<div class="switch">
+			<img class="front" src="phone.jpg">
+			<img class="flip" src="phone2.jpg">
+		</div>
+		<div class="switch">
+			<img class="front" src="skeletor.jpg">
+			<img class="flip" src="skeletor2.jpg">
+		</div>
+
+
+
+
+		<div>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email Address</th>
+						<th>Contect #</th>
+					</tr>
+				</thead>
+				<tbody id='new'>
+				</tbody>
+			</table>
+			<form>
+				<label>First Name: <Input type="text" name="first" id="ifirst"></label>
+				<label>Last Name: <Input type="text" name="last" id="ilast"></label>
+				<label>Email Address: <Input type="text" name="email" id="iemail"></label>
+				<label>Contact Number: <Input type="text" name="contact" id="icontact"></label>
+				<button id="add">Add User</button>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jquery practice site</title>
+		<script src="jquery-2.0.3.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script type="text/javascript"> 
+
+
+		$(document).ready(function(){
+			$(function() {
+    		$( ".box" ).sortable();
+    		$( ".box" ).disableSelection();
+  		});
+		$('#top').click(function(){
+			$("#top").attr("src", "cat head.png");
+		});
+		$('#face').click(function(){
+			$("#face").attr("src", "cat face.png");
+		});
+		$('#body').click(function(){
+			$("#body").attr("src", "cat body.png");
+		});
+		$('#feet').click(function(){
+			$("#feet").attr("src", "cat text.png");
+		});
+
+
+		});
+
+
+		</script>
+
+		<style type="text/css">
+		img{ 
+			width:360px;
+			height:80px;
+			margin:5px;
+		}
+		h1{
+			text-align:center;
+			font-family:arial;
+			font-size:24px;
+		}
+		.box{
+			width:360px;
+			display:inline-block;
+			text-align:center;
+		}
+		.box2{
+			width:360px;
+			display:inline-block;
+			text-align:center;
+		}
+		.sort-container{
+			width:800px;
+			text-align:center;
+			position:relative;
+			left:15%;
+		}
+		.change-container{
+			width:500px;
+			position:relative;
+			text-align:center;
+			left:25%;
+			bottom:0;
+		}
+		</style>
+	<body>
+		<div class="sort-container">
+			<h1>Sortable Ninja and Cat Puzzles</h1>
+			<div class="box">
+				<p>Ninja</p>
+				<img src="ninja top.png">
+				<img src="ninja face.png">
+				<img src="ninja body.png">
+				<img src="ninja feet.png">
+			</div>
+			<div class="box">
+				<p>Cat Ninja</p>
+				<img src="cat head.png">
+				<img src="cat face.png">
+				<img src="cat body.png">
+				<img src="cat text.png">
+			</div>
+		</div>
+		<div class="change-container">
+			<h1>Image Changer</h1>
+			<div class="box2">
+				<img id="top" src="ninja top.png">
+				<img id="face" src="ninja face.png">
+				<img id="body"src="ninja body.png">
+				<img id="feet"src="ninja feet.png">
+			</div>
+
+
+		</div>
+
+
+
+
+	</body>
+</html>

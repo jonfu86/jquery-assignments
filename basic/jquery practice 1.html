@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jquery practice site</title>
+		<script src="jquery-2.0.3.min.js"></script>
+		<script type="text/javascript"> 
+
+
+		$(document).ready(function(){
+		
+		$('h3').hide();
+		$('h2').hide();
+
+		
+
+		$('h1').click(function(){
+			alert('youve clicked on the main heading')
+			$('h1').slideUp();
+			$('.p1').fadeOut();
+			$('h3').show();
+
+		});
+		
+		$('h3').click(function(){
+			alert('did you miss me?')
+			$('.p1').fadeIn();
+			$('h3').hide();
+			$('h2').slideDown();
+		});
+
+		$('h2').click(function(){
+			$('h1').slideToggle();
+			$('h2').slideToggle();
+
+		});
+		$('.toggle').click(function(){
+			$('h4').toggle();
+		});
+		$('.red').click(function(){
+			$('h5').removeClass("bluecolor greencolor").addClass("redcolor");
+			
+		});
+		$('.blue').click(function(){
+			$('h5').removeClass("redcolor greencolor").addClass("bluecolor");
+
+		});
+		$('.green').click(function(){
+			$('h5').removeClass("redcolor bluecolor").addClass("greencolor");
+		});
+		$('.p2').click(function(){
+			$('.pic').append('<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQrFZ-XOFDIkU0OSEJJa8XHIr4pkNRZgPBsLaLJoAwLdsDIyqGY" alt="cool">');
+			// $('.p2').hide();
+		});
+		$('.center').click(function(){
+			$('.center').before("left friend ").after("right friend ");
+
+		});
+		$('.hello').click(function(){
+			$( ".hello" ).html( "<b>Bye!</b>" );
+		});
+		$(document).on("click", "img", function(){
+			$(this).attr("src", "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcStU1vH7an8HIG5k5KugPNgy1OwQvGIYJtKptfhleT58AnJnN1MQw");	
+		});
+		$('.text').click(function(){
+			$('.text').text("and some more TEXT");
+		});
+		$( "form" ).on( "submit", function( event ) {
+  			event.preventDefault();
+  			console.log( $( this ).serialize() );
+		});
+		$('.focus').focus(function(){
+			alert('Good Job!');
+		});
+		$('#drop').change(function(){
+			var singleValues = $('#drop').val();
+			$('#value').html(singleValues);
+		});
+
+		});
+		
+
+		</script>
+
+		<style type="text/css">
+
+		.redcolor{
+			color:red;
+		}
+		.bluecolor{
+			color:blue;
+		}
+		.greencolor{
+			color:green;
+		}
+		.text{
+			font-family:Verdana;
+			font-weight:bolder;
+			font-size:24px;
+		}
+		</style>
+
+
+	</head>
+	<body>
+		<h1>This is the main heading. Click Me.</h1>
+		<h3>Bring back the pargraph!</h3>
+		<p class="p1">This is a paragraph</p>
+		<h2>Click me to bring back the main heading</h2>
+		<h4>Toggle Text</h4>
+		<button class="toggle" type="submit" value="submit">Toggle</button>
+		<h5>Change colors!</h5>
+		<button class="red" type="submit" value="submit">Red</button>
+		<button class="blue" type="submit" value="submit">Blue</button>
+		<button class="green" type="submit" value="submit">Green</button>
+		<div class="pic"><p class="p2">Click for a cool picture</p></div>
+		<button class="center" type="submit" value="submit">Lonely Center</button>
+		<div class="hello">Hello!</div>
+		<p class="text">This is just some TEXT</p>
+		<form>
+		  <select name="single">
+		    <option>drop1</option>
+		    <option>drop2</option>
+		  </select>
+		
+		  <select name="multiple" multiple="multiple">
+		    <option selected="selected">list1</option>
+		    <option>list2</option>
+		    <option selected="selected">list3</option>
+		  </select>
+	
+		  <input type="checkbox" name="check" value="check1" id="ch1">
+		  <label for="ch1">check1</label>
+		  <input type="checkbox" name="check" value="check2" checked="checked" id="ch2">
+		  <label for="ch2">check2</label>
+		
+		  <input type="radio" name="radio" value="radio1" checked="checked" id="r1">
+		  <label for="r1">radio1</label>
+		  <input type="radio" name="radio" value="radio2" id="r2">
+		  <label for="r2">radio2</label>
+		</form>
+		 
+		<p><tt id="results"></tt></p>
+		<button class="focus" type="submit" value="submit">Focus Me</button>
+		<form>
+		<p id="value">drop-down list value</p>
+		  <select id="drop">
+		    <option>drop1</option>
+		    <option>drop2</option>
+		  </select>
+		</form>
+
+		
+	</body>
+</html>
